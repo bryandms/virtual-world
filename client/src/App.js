@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import socketIOClient from "socket.io-client";
 
+import Player from './components/Player';
+
 class App extends Component {
   constructor() {
     super();
@@ -15,6 +17,16 @@ class App extends Component {
     socket.emit('movement', { x: e.pageX, y: e.pageY });
   }
 
+  displayPlayers() {
+    const { players } = this.state;
+
+    return Object.keys(players).map((player, i) =>
+      <Player key={i} style={{
+        position: "absolute", top: players[player].y, left: players[player].x
+      }} />
+    )
+  }
+
   componentDidMount() {
     const { socket } = this.state;
     socket.emit('new player');
@@ -24,9 +36,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        Test
-      </div>
+      <div>{ this.displayPlayers() }</div>
     );
   }
 }
