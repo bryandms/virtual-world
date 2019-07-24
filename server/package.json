@@ -7,11 +7,12 @@
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "bryandms",
+  "author": "bryandms,dfs11",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "nodemon": "^1.19.1",
     "socket.io": "^2.2.0"
   }
 }
