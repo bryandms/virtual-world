@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Message from './Message';
+import head from './head.png';
+import body from './body.png';
+import './Player.css';
 
 class Player extends Component {
 	
@@ -19,8 +22,10 @@ class Player extends Component {
 			<div style={style}>
 			
 			<Message textMessage= {this.ultimateMessage} />
-			<input id="message" type="text" placeholder="Mensaje" onKeyDown={this.handleEnter} />
-			<h1>Player</h1>		
+			<h1> <input id="message" type="text" placeholder="Mensaje" onKeyDown={this.handleEnter} />
+			<img src={head} alt="head" />
+			<img src={body} alt="body" />
+			</h1>		
 			</div>
 			</div>
 			
