@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import socketIOClient from "socket.io-client";
-
+import Background from './fondo.jpg';
 import Player from './components/Player';
+
 
 class App extends Component {
   constructor() {
@@ -33,10 +34,18 @@ class App extends Component {
     socket.on("state", data => this.setState({ players: data }));
     document.addEventListener('click', this.sendMovement, true);
   }
+  
 
   render() {
+    var sectionStyle = {
+      width: "100%",
+      height: "600px",
+      backgroundImage: `url(${Background})`
+    };
+    
     return (
-      <div>{ this.displayPlayers() }</div>
+      
+      <div style={ sectionStyle }> { this.displayPlayers() }</div>
     );
   }
 }
