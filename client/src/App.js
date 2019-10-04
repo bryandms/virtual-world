@@ -3,6 +3,7 @@ import socketIOClient from "socket.io-client";
 import Background from './fondo.jpg';
 import Player from './components/Player';
 
+
 class App extends Component {
   constructor() {
     super();
